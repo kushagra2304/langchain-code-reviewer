@@ -8,3 +8,5 @@ requests
 beautifulsoup4
 langchain_community
 langchain_huggingface
+langchain-huggingface
+sentence-transformers
