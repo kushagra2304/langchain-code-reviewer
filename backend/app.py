@@ -39,14 +39,12 @@ def generate_feedback(text):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     chunks = splitter.split_text(text)
 
-    # vector store
     vectordb = Chroma.from_texts(
         texts=chunks,
         embedding=embedding_model,
         persist_directory=CHROMA_PATH
     )
 
-    # Prompt
     template = """
 You are an AI Website Feedback Engine.
 Analyze the website text and return STRICT JSON only.
